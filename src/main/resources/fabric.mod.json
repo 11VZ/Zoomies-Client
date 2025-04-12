@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "zoomies",
+  "version": "v1.3",
+  "name": "Zoomies",
+  "description": "Private.",
+  "authors": [
+    "11VZ"
+  ],
+  "license": "MIT",
+  "icon": "assets/zoomies/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.vz11.zoomies.Zoomies"
+    ]
+  },
+  "accessWidener" : "zoomies.accesswidener",
+  "mixins": [
+    "zoomies.mixins.json"
+  ],
+  "depends": {
+    "fabric-api": "*",
+    "minecraft": "~1.21",
+    "java": ">=21"
+  }
+}
