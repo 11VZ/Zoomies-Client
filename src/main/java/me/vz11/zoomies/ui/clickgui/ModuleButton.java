@@ -1,6 +1,7 @@
 package me.vz11.zoomies.ui.clickgui;
 
 import me.vz11.zoomies.module.Module;
+import me.vz11.zoomies.module.ModuleManager;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
@@ -11,13 +12,15 @@ public class ModuleButton {
 
 	public ModuleButton(Module module) {
 		this.module = module;
-		this.width = 92;
+		this.width = 88;
 	}
 
 	public void render(DrawContext drawContext, int mouseX, int mouseY, int x, int y, TextRenderer textRenderer) {
-		this.x = x;
-		this.y = y;
-
+        this.x = x;
+        this.y = y;
+        
+        if (!ModuleManager.isBlatantMode() && module.blatant) return;
+        
 		int backgroundColor = hovered(mouseX, mouseY) ? 0xFF444444 : 0xFF333333;
 
 		drawContext.fill(x + 2, y, x + width - 3, y + height, backgroundColor);
@@ -38,7 +41,9 @@ public class ModuleButton {
 	}
 
 	public boolean mouseClicked(int mouseX, int mouseY, int button) {
-		if (hovered(mouseX, mouseY)) {
+        if (!ModuleManager.isBlatantMode() && module.blatant) return false;
+        
+        if (hovered(mouseX, mouseY)) {
 			if (button == 0) {
 				module.toggle();
 			} else if (button == 1) {

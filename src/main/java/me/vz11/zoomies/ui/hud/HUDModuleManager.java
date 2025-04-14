@@ -17,9 +17,9 @@ public class HUDModuleManager
 			new CPSDetector(2, 22),
 			new TPS(2, 32),
 			new Ping(2, 42),
-			new ServerInfoHUD(2, 52),
+			new ServerInfoHUD(2, 72),
 			new Coordinates(2, 62),
-			new MovementSpeed(2, 72),
+			new MovementSpeed(2, 52),
 			new ArmorDisplay(2, 82),
 			new TotemCounter(20, 82)
 		);

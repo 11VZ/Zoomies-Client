@@ -67,6 +67,7 @@ public class InteractionUtil {
         ClientPlayerEntity player = mc.player;
 
         if (player != null && mc.interactionManager != null) {
+            mc.options.attackKey.setPressed(true);
             HitResult hitResult = mc.crosshairTarget;
 
             if (hitResult != null) {
@@ -212,5 +213,9 @@ public class InteractionUtil {
 
     public static boolean isChatOpen() {
         return mc.currentScreen instanceof ChatScreen;
+    }
+
+    public static boolean isPlaying(){
+        return mc.currentScreen == null;
     }
 }

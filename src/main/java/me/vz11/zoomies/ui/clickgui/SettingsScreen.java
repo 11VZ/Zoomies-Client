@@ -4,7 +4,6 @@ import me.vz11.zoomies.module.Module;
 import me.vz11.zoomies.module.settings.Setting;
 import me.vz11.zoomies.ui.SetScreenButton;
 import me.vz11.zoomies.ui.hud.editor.HUDEditorScreen;
-import me.vz11.zoomies.util.ColorUtils;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
@@ -24,8 +23,8 @@ public class SettingsScreen extends Screen {
 
     public SettingsScreen(Module module) {
         super(Text.literal("Settings"));
-        backButton = new SetScreenButton(ColorUtils.underline + "< Back", x + 8, y + 8, 0xFFFFFF, ClickGUIScreen.INSTANCE);
-        editButton = new SetScreenButton(ColorUtils.underline + "Edit", x + windowWidth - 28, y + 8, 0xFFFFFF, HUDEditorScreen.INSTANCE);
+        backButton = new SetScreenButton("< Back", x + 8, y + 8, 0xFFFFFF, ClickGUIScreen.INSTANCE);
+        editButton = new SetScreenButton("Edit", x + windowWidth - 28, y + 8, 0xFFFFFF, HUDEditorScreen.INSTANCE);
         this.module = module;
     }
 
@@ -49,7 +48,7 @@ public class SettingsScreen extends Screen {
         drawCircle(drawContext, x + radius, y + windowHeight - radius, radius, 0xFF222222); // Bottom-left
         drawCircle(drawContext, x + windowWidth - radius, y + windowHeight - radius, radius, 0xFF222222); // Bottom-right
 
-        drawContext.fill(x + radius, y, x + windowWidth - radius, y + 16, module.category.color);
+        drawContext.fill(x + radius, y, x + windowWidth - radius, y + 16, 0xFF222222);
         drawContext.drawCenteredTextWithShadow(textRenderer, module.name, x + (windowWidth / 2), y + 4, 0xFFFFFF);
 
         drawContext.drawText(textRenderer, module.description, x + 8, y + 24, 0xFFFFFF, true);

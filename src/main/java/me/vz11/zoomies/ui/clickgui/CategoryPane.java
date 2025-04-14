@@ -88,6 +88,7 @@ public class CategoryPane {
         if (!collapsed) {
             int buttonYOffset = y + 20;
             for (ModuleButton m : moduleButtons) {
+                if (!ModuleManager.isBlatantMode() && m.module.blatant) continue;
                 m.render(drawContext, mouseX, mouseY, x + 4, buttonYOffset, textRenderer);
                 buttonYOffset += 16;
             }
