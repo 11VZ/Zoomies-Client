@@ -12,7 +12,7 @@ public class Airplace extends Module {
     private final BooleanSetting amount = new BooleanSetting("Only 2 Anchors", true);
 
     public Airplace() {
-        super("Airplace", "Makes airplacing easier", Category.COMBAT);
+        super("Airplace", "Makes airplacing easier", Category.COMBAT, true);
         settings.add(amount);
     }
 

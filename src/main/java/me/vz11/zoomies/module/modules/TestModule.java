@@ -16,7 +16,7 @@ public class TestModule extends Module
 
     public TestModule()
     {
-        super("Test Module", "Used for testing module features.", Category.WORLD);
+        super("Test Module", "Used for testing module features.", Category.WORLD, false);
         addSettings(bs, ds, ss);
     }
 

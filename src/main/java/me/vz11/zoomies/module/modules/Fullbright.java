@@ -8,7 +8,7 @@ public class Fullbright extends Module
 {
     public Fullbright()
     {
-        super("Fullbright", "Allows you to see in the dark.", Category.RENDER);
+        super("Fullbright", "Allows you to see in the dark.", Category.RENDER, false);
     }
 
     @SuppressWarnings("unchecked")

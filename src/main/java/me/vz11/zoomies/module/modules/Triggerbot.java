@@ -9,7 +9,7 @@ public class Triggerbot extends Module {
     BooleanSetting rightClick = new BooleanSetting("Require Right Click", false);
 
     public Triggerbot() {
-        super("Triggerbot", "Automatically attacks entities in crosshair.", Category.COMBAT);
+        super("Triggerbot", "Automatically attacks entities in crosshair.", Category.COMBAT, true);
         settings.add(rightClick);
     }
 

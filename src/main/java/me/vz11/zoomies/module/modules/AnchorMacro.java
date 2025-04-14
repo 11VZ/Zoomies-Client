@@ -26,7 +26,7 @@ public class AnchorMacro extends Module {
     private boolean macroInProgress = false;
 
     public AnchorMacro() {
-        super("Anchor Macro", "Charges a respawn anchor with glowstone when looking at it.", Category.COMBAT);
+        super("Anchor Macro", "Charges a respawn anchor with glowstone when looking at it.", Category.COMBAT, true);
         settings.add(glowstone);
         settings.add(switchToGlowstoneDelay);
         settings.add(rightClickDelay);

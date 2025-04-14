@@ -14,7 +14,7 @@ public class Reach extends Module
 
     public Reach()
     {
-        super("Reach", "Extends player interaction distance.", Category.COMBAT);
+        super("Reach", "Extends player interaction distance.", Category.COMBAT, true);
         settings.add(blockRange);
         settings.add(entityRange);
     }

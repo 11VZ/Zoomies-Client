@@ -10,7 +10,7 @@ public class Sprint extends Module
 
     public Sprint() 
     {
-        super("Sprint", "Allows you to move faster.", Category.MOVEMENT);
+        super("Sprint", "Allows you to move faster.", Category.MOVEMENT, false);
         settings.add(omni);
     }
     

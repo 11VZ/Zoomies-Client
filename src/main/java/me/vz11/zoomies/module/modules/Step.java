@@ -12,7 +12,7 @@ public class Step extends Module
 
     public Step()
     {
-        super("Step", "Allows you to step up full blocks.", Category.MOVEMENT);
+        super("Step", "Allows you to step up full blocks.", Category.MOVEMENT, true);
         settings.add(stepHeight);
     }
     

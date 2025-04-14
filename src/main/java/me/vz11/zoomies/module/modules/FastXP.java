@@ -11,7 +11,7 @@ public class FastXP extends Module {
     private long lastClickTime = 0;
 
     public FastXP() {
-        super("FastXP", "Spams XP while holding right-click", Category.COMBAT);
+        super("FastXP", "Spams XP while holding right-click", Category.COMBAT, true);
         settings.add(delay);
     }
 

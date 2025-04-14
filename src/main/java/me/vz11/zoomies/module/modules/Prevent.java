@@ -8,7 +8,7 @@ import me.vz11.zoomies.util.RayTraceUtil;
 public class Prevent extends Module {
 
     public Prevent() {
-        super("Prevent", "Prevents actions in certain circumstances", Category.COMBAT);
+        super("Prevent", "Prevents actions in certain circumstances", Category.COMBAT, true);
     }
 
     @Override

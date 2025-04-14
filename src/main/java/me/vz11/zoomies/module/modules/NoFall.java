@@ -8,7 +8,7 @@ public class NoFall extends Module
 {
     public NoFall()
     {
-        super("NoFall", "Prevents you from taking fall damage.", Category.PLAYER);
+        super("NoFall", "Prevents you from taking fall damage.", Category.PLAYER, true);
     }
 
     @Override

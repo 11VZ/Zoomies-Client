@@ -8,11 +8,11 @@ import net.minecraft.screen.slot.SlotActionType;
 
 public class AutoTotem extends Module 
 {
-	public BooleanSetting overrideItems = new BooleanSetting("Override other items", false);
+	public BooleanSetting overrideItems = new BooleanSetting("Override other items", true);
 	
     public AutoTotem()
     {
-        super("Auto Totem", "Automatically puts totems in offhand.", Category.COMBAT);
+        super("Auto Totem", "Automatically puts totems in offhand.", Category.COMBAT, true);
         settings.add(overrideItems);
     }
     

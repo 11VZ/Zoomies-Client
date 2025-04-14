@@ -10,8 +10,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.MovementType;
 import net.minecraft.util.math.Vec3d;
 
-public abstract class Module 
-{
+public abstract class Module {
     protected static MinecraftClient mc = MinecraftClient.getInstance();
     public String name;
     public String description;
@@ -19,15 +18,16 @@ public abstract class Module
     public boolean enabled;
     public ArrayList<Setting> settings;
     public boolean showEditButton;
+    public boolean blatant;
     
     public BooleanSetting showInModulesList = new BooleanSetting("Show in Modules List", true);
     public KeycodeSetting keybind = new KeycodeSetting("Keybind", 0);
 
-    public Module(String name, String description, Category category)
-    {
+    public Module(String name, String description, Category category, boolean blatant) {
         this.name = name;
         this.description = description;
         this.category = category;
+        this.blatant = blatant;
         settings = new ArrayList<>();
         settings.add(showInModulesList);
         settings.add(keybind);

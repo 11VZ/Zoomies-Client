@@ -14,7 +14,7 @@ public class ChatSpammer extends Module
 
     public ChatSpammer()
     {
-        super("Chat Spammer", "Spams a selected message in chat.", Category.CHAT);
+        super("Chat Spammer", "Spams a selected message in chat.", Category.CHAT, false);
         settings.add(message);
         settings.add(delay);
     }

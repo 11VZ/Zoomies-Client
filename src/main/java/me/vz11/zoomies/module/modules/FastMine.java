@@ -6,7 +6,7 @@ import me.vz11.zoomies.module.Module;
 public class FastMine extends Module {
 
     public FastMine() {
-        super("Fast Mine", "Lets you mine faster", Category.WORLD);
+        super("Fast Mine", "Lets you mine faster", Category.WORLD, true);
     }
 
     @Override

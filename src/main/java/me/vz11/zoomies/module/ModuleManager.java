@@ -8,6 +8,7 @@ public class ModuleManager
 {
     public static ModuleManager INSTANCE = new ModuleManager();
     public ArrayList<Module> modules = new ArrayList<>();
+	public static boolean blatantMode = true;
 
     public ModuleManager()
     {
@@ -20,28 +21,37 @@ public class ModuleManager
 			new Speed(),
 			new ModulesList(),
 			new ChatSpammer(),
-			new AutoJump(),
 			new Reach(),
 			new AntiPowderSnow(),
 			new AutoTotem(),
-			new AutoWalk(),
 			new NoJumpDelay(),
 			new Sprint(),
-			//new AnchorMacro(),
 			new PearlMacro(),
 			new FastXP(),
 			new Airplace(),
-			//new Prevent(),
 			new FastPlace(),
-			//new AutoAxe(),
 			new QuickFall(),
 			new MaceBoost(),
 			new FastMine(),
 			new Cape(),
 			new Airjump(),
 			new Triggerbot(),
-			new FPSSpoofer()
+			new FPSSpoofer(),
+			new Airwalk(),
+			new AutoAFK(),
+			new MouseTaper(),
+			new AutoRespawn(),
+			new AutoRekit(),
+			new CW()
 		);
+    }
+    
+    public static boolean isBlatantMode() {
+        return blatantMode;
+    }
+    
+    public static void toggleBlatantMode() {
+        blatantMode = !blatantMode;
     }
 	
 	private void registerModules(Module... modules) 

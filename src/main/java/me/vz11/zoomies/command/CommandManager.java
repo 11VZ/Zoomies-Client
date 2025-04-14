@@ -40,6 +40,7 @@ public class CommandManager
         add(new CPS());
         add(new Prefix());
         add(new ClearChat());
+        add(new Mode());
         commands.sort(Comparator.comparing(Command::getName));
     }
 

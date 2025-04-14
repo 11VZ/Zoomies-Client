@@ -11,7 +11,7 @@ public class Rotation extends Module
     
     public Rotation()
     {
-        super("Rotation", "Locks camera to specified pitch and yaw.", Category.PLAYER);
+        super("Rotation", "Locks camera to specified pitch and yaw.", Category.PLAYER, true);
         settings.add(pitch);
         settings.add(yaw);
     }

@@ -7,6 +7,6 @@ public class AntiPowderSnow extends Module
 {
     public AntiPowderSnow()
     {
-        super("Anti Powder Snow", "Allows the player to walk on powder snow.", Category.PLAYER);
+        super("Anti Powder Snow", "Allows the player to walk on powder snow.", Category.PLAYER, true);
     }
 }

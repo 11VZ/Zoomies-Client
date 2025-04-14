@@ -15,7 +15,7 @@ public class Speed extends Module
     DoubleSetting speed = new DoubleSetting("Speed", 1.4, 0.1, 10, 1);
     public Speed() 
     {
-        super("Speed", "Allows you to move faster.", Category.MOVEMENT);
+        super("Speed", "Allows you to move faster.", Category.MOVEMENT, true);
         settings.add(speed);
         settings.add(strafe);
         settings.add(jump);

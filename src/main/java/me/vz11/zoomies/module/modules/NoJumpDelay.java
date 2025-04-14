@@ -12,7 +12,7 @@ public class NoJumpDelay extends Module
 
     public NoJumpDelay()
     {
-        super("NoJumpDelay", "Eliminates jump delay.", Category.MOVEMENT);
+        super("NoJumpDelay", "Eliminates jump delay.", Category.MOVEMENT, true);
         mc = MinecraftClient.getInstance();
     }
 

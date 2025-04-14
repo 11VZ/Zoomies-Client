@@ -7,7 +7,7 @@ public class Fly extends Module {
 
 
     public Fly() {
-        super("Fly", "Allows you to fly in the air.", Category.MOVEMENT);
+        super("Fly", "Allows you to fly in the air.", Category.MOVEMENT, true);
     }
 
     @Override

@@ -5,7 +5,7 @@ import me.vz11.zoomies.module.Module;
 
 public class Airjump extends Module {
     public Airjump() {
-        super("Airjump", "Lets you jump in the air!", Category.MOVEMENT);
+        super("Airjump", "Lets you jump in the air!", Category.MOVEMENT, true);
     }
 
     @Override

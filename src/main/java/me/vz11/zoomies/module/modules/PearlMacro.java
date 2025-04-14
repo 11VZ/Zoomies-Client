@@ -11,12 +11,11 @@ public class PearlMacro extends Module {
     private int step = 0;
     private int delayCounter = 0;
 
-    // User-defined delay setting (converted to ticks in `onTick`)
     DoubleSetting delayAmount = new DoubleSetting("Delay", 1, 0.1, 10, 0);
     BooleanSetting switchback = new BooleanSetting("Switch Back", true);
 
     public PearlMacro() {
-        super("Pearl Macro", "When you press a keybind it pearls", Category.COMBAT);
+        super("Pearl Macro", "When you press a keybind it pearls", Category.COMBAT, true);
         settings.add(delayAmount);
         settings.add(switchback);
     }
@@ -24,7 +23,7 @@ public class PearlMacro extends Module {
     @Override
     public void onEnable() {
         super.onEnable();
-        step = 1;  // Start with the first step
+        step = 1;
     }
 
     @Override
@@ -34,7 +33,6 @@ public class PearlMacro extends Module {
         if (delayCounter++ < (int) delayAmount.value) return;
         delayCounter = 0;
 
-        // Execute actions with delay
         switch (step) {
             case 1:
                 InteractionUtil.switchToBlock("ender_pearl");
@@ -48,8 +46,8 @@ public class PearlMacro extends Module {
                 if (switchback.value) {
                     InteractionUtil.switchBack();
                 }
-                step = 0;  // Reset after all actions complete
-                toggle();  // Toggle off the module
+                step = 0;
+                toggle();
                 break;
         }
     }
@@ -57,7 +55,7 @@ public class PearlMacro extends Module {
     @Override
     public void onDisable() {
         super.onDisable();
-        step = 0;  // Reset steps on disable
+        step = 0;
         delayCounter = 0;
     }
 }

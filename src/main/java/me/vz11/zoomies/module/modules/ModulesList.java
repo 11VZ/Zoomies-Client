@@ -7,7 +7,7 @@ public class ModulesList extends Module
 {
     public ModulesList()
     {
-        super("ModulesList", "Shows enabled modules on side of screen", Category.RENDER);
+        super("ModulesList", "Shows enabled modules on side of screen", Category.RENDER, false);
         this.enabled = true;
         this.showInModulesList.value = false;
     }

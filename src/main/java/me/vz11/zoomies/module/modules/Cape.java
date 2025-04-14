@@ -7,7 +7,7 @@ public class Cape extends Module
 {
     public Cape()
     {
-        super("Cape", "Enables the custom cape", Category.RENDER);
+        super("Cape", "Enables the custom cape", Category.RENDER, false);
         this.showInModulesList.value = false;
     }
 }

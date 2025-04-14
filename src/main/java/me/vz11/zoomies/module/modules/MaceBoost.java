@@ -6,7 +6,7 @@ import me.vz11.zoomies.module.Module;
 public class MaceBoost extends Module {
     
     public MaceBoost() {
-        super("MaceBoost", "Amplifies mace damage by simulating high-velocity impacts", Category.COMBAT);
+        super("MaceBoost", "Amplifies mace damage by simulating high-velocity impacts", Category.COMBAT, true);
     }
 
     @Override

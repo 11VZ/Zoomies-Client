@@ -3,28 +3,22 @@ package me.vz11.zoomies.module.modules;
 import me.vz11.zoomies.module.Category;
 import me.vz11.zoomies.module.Module;
 import me.vz11.zoomies.util.InteractionUtil;
-import net.minecraft.client.MinecraftClient;
 
 public class CW extends Module {
+
     public CW() {
-        super("CW", "Crystals for you", Category.COMBAT);
-    }
-
-    @Override
-    public void onEnable() {
-        super.onEnable();
-    }
-
-    @Override
-    public void onDisable() {
-        super.onDisable();
+        super("CW", "Makes you crystal as fast as 11VZ", Category.COMBAT, true);
     }
 
     @Override
     public void tick() {
-        super.tick();
-        if (InteractionUtil.holding("end_crystal")) {
-            System.out.println(MinecraftClient.getInstance().crosshairTarget);
+        if (InteractionUtil.inputActive("right") && InteractionUtil.holding("end_crystal")) {
+            if (mc.crosshairTarget.toString().contains("net.minecraft.util.hit.EntityHitResult")) {
+                InteractionUtil.leftClick();
+            } else {
+                InteractionUtil.rightClick();
+            }
         }
+        mc.options.attackKey.setPressed(false);
     }
 }

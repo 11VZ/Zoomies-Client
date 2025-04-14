@@ -13,7 +13,7 @@ public class HUDEnabler extends Module
 	
     public HUDEnabler()
     {
-        super("HUD", "The Zoomies HUD.", Category.RENDER);
+        super("HUD", "The Zoomies HUD.", Category.RENDER, false);
         this.enabled = true;
         this.showInModulesList.value = false;
         this.showEditButton = true;
