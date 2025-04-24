@@ -11,6 +11,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 
 public class ClickGUIScreen extends Screen {
+    public static String keybind = "right alt";
 	public static ClickGUIScreen INSTANCE = new ClickGUIScreen();
 	public ArrayList<CategoryPane> categoryPanes;
 

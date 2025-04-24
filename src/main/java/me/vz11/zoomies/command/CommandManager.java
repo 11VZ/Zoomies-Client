@@ -41,6 +41,7 @@ public class CommandManager
         add(new Prefix());
         add(new ClearChat());
         add(new Mode());
+        add(new Bind());
         commands.sort(Comparator.comparing(Command::getName));
     }
 

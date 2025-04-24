@@ -42,7 +42,9 @@ public class ModuleManager
 			new MouseTaper(),
 			new AutoRespawn(),
 			new AutoRekit(),
-			new CW()
+			new CW(),
+			new Velocity(),
+			new ShieldBoost()
 		);
     }
     

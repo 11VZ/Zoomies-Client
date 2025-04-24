@@ -11,6 +11,11 @@ public class AutoRespawn extends Module
     }
 
     @Override
+    public void onEnable() {
+        super.onEnable();
+    }
+
+    @Override
     public void tick() {
         if (mc.player.getHealth() <= 0) {
             mc.player.requestRespawn();
