@@ -17,13 +17,11 @@ public class BooleanSetting extends Setting {
         super.render(drawContext, x, y, mouseX, mouseY, textRenderer);
         drawContext.drawTextWithShadow(textRenderer, Text.literal(name), x + 8, y + 10, 0xFFFFFF);
 
-        int toggleX = x + 180;
+        int toggleX = x + 170;
         int toggleY = y + 8;
 
-        // Draw base toggle background
         drawRectangleWithRoundedCorners(drawContext, toggleX, toggleY, toggleX + 28, toggleY + 12, 6, 0xFF555555);
 
-        // Draw the toggle switch based on `value`
         if (value) {
             drawRectangleWithRoundedCorners(drawContext, toggleX + 16, toggleY, toggleX + 28, toggleY + 12, 6, 0xFF55FFFF);
         } else {
@@ -32,11 +30,9 @@ public class BooleanSetting extends Setting {
     }
 
     private void drawRectangleWithRoundedCorners(DrawContext drawContext, int x1, int y1, int x2, int y2, int radius, int color) {
-        // Draw main rectangle without corners
         drawContext.fill(x1 + radius, y1, x2 - radius, y2, color);
         drawContext.fill(x1, y1 + radius, x2, y2 - radius, color);
 
-        // Draw corner circles for rounded effect
         drawCircle(drawContext, x1 + radius, y1 + radius, radius, color); // Top-left
         drawCircle(drawContext, x2 - radius, y1 + radius, radius, color); // Top-right
         drawCircle(drawContext, x1 + radius, y2 - radius, radius, color); // Bottom-left
