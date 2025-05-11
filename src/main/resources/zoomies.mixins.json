@@ -18,7 +18,9 @@
     "NetworkHandlerMixin",
     "AbstractClientPlayerEntityMixin",
     "MultiplayerScreenMixin",
-    "MouseMixin"
+    "MouseMixin",
+    "ClientPlayerInteractionManagerMixin",
+    "ParticleManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
