@@ -33,10 +33,10 @@ public class BooleanSetting extends Setting {
         drawContext.fill(x1 + radius, y1, x2 - radius, y2, color);
         drawContext.fill(x1, y1 + radius, x2, y2 - radius, color);
 
-        drawCircle(drawContext, x1 + radius, y1 + radius, radius, color); // Top-left
-        drawCircle(drawContext, x2 - radius, y1 + radius, radius, color); // Top-right
-        drawCircle(drawContext, x1 + radius, y2 - radius, radius, color); // Bottom-left
-        drawCircle(drawContext, x2 - radius, y2 - radius, radius, color); // Bottom-right
+        drawCircle(drawContext, x1 + radius, y1 + radius, radius, color);
+        drawCircle(drawContext, x2 - radius, y1 + radius, radius, color);
+        drawCircle(drawContext, x1 + radius, y2 - radius, radius, color);
+        drawCircle(drawContext, x2 - radius, y2 - radius, radius, color);
     }
 
     private void drawCircle(DrawContext drawContext, int centerX, int centerY, int radius, int color) {

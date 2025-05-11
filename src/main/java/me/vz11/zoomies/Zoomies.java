@@ -24,6 +24,7 @@ import me.vz11.zoomies.ui.hud.HUDModuleManager;
 import me.vz11.zoomies.util.ColorUtils;
 import me.vz11.zoomies.util.InteractionUtil;
 import me.vz11.zoomies.util.KeycodeUtils;
+import me.vz11.zoomies.util.AuthUtil;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.gui.screen.ChatScreen;
 
@@ -40,7 +41,14 @@ public class Zoomies implements ModInitializer {
 	public void onInitialize() {
 		loadConfig();
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-			if (client.player == null || InteractionUtil.isChatOpen()) return;
+			if (client.player == null) return;
+			
+			if (!AuthUtil.isAuthorized()) {
+				//client.setScreen(new AuthUtil.UnauthorizedScreen());
+				return;
+			}
+
+			if (InteractionUtil.isChatOpen()) return;
 			prefix = new CommandManager().getPrefix();
 
 			if (KeycodeUtils.isKeyPressed(prefix)) {

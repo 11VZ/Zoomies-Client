@@ -11,26 +11,32 @@ public class Airwalk extends Module {
     @Override
     public void onEnable() {
         super.onEnable();
-        mc.player.setOnGround(true);
+        if(mc.player != null) {
+            mc.player.setOnGround(true);
+        }
     }
 
     @Override
     public void onDisable() {
         super.onDisable();
-        mc.player.setOnGround(false);
+        if(mc.player != null) {
+            mc.player.setOnGround(false);
+        }
     }
 
     @Override
     public void tick() {
-        mc.player.setOnGround(true);
-        double velX = mc.player.getVelocity().x;
-        double velZ = mc.player.getVelocity().z;
-        mc.player.setVelocity(velX, 0, velZ);
-        super.tick();
-        if(mc.options.sneakKey.isPressed()) {
+        if(mc.player != null) {
+            mc.player.setOnGround(true);
+            double velX = mc.player.getVelocity().x;
+            double velZ = mc.player.getVelocity().z;
+            mc.player.setVelocity(velX, 0, velZ);
+            super.tick();
+            if(mc.options.sneakKey.isPressed()) {
             mc.player.setVelocity(velX, -0.5, velZ);
         } else if (mc.options.jumpKey.isPressed()) {
-            mc.player.setVelocity(velX, 0.5, velZ);
+                mc.player.setVelocity(velX, 0.5, velZ);
+            }
         }
     }
 }

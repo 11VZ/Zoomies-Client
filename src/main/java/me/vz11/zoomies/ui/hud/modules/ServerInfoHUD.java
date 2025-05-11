@@ -29,14 +29,12 @@ public class ServerInfoHUD extends HUDModule {
         int yOffset = 0;
         int lineHeight = textRenderer.fontHeight + 1;
         
-        // Server IP
         drawContext.drawTextWithShadow(textRenderer, 
             ColorUtils.aqua + "Server: " + ColorUtils.white + serverIP, 
             x, y + yOffset, 0xFFFFFF
         );
         yOffset += lineHeight;
 
-        // Players
         if (serverData != null) {
             ClientPlayNetworkHandler networkHandler = MinecraftClient.getInstance().getNetworkHandler();
             if (networkHandler != null) {
@@ -49,7 +47,6 @@ public class ServerInfoHUD extends HUDModule {
             }
         }        
 
-        // Server Software
         if (serverData!= null) {
             String versionString = serverData.version.toString();
             String cleaned = versionString != null ? versionString : "";

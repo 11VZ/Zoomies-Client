@@ -44,7 +44,11 @@ public class ModuleManager
 			new AutoRekit(),
 			new CW(),
 			new Velocity(),
-			new ShieldBoost()
+			new ShieldBoost(),
+			new Criticals(),
+			new AnchorMacro(),
+			new ESP(),
+			new Render()
 		);
     }
     

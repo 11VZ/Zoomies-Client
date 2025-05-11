@@ -1,56 +1,70 @@
 package me.vz11.zoomies.ui;
 
-import net.minecraft.client.gui.DrawContext;
+import me.vz11.zoomies.util.SessionUtil;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.tooltip.Tooltip;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.text.Text;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
 
 public class SessionManagerScreen extends Screen {
-    private ButtonWidget loginbutton;
     private TextFieldWidget usernameField;
-    private String username = MinecraftClient.getInstance().getSession().getUsername();
+    private String status = "";
 
     public SessionManagerScreen() {
-        super(Text.of("Session Input"));
+        super(Text.literal("Session Manager"));
     }
 
     @Override
     protected void init() {
         super.init();
+        int centerX = width / 2;
+        int centerY = height / 2;
 
-        int centerX = this.width / 2;
+        // Username field
+        usernameField = new TextFieldWidget(textRenderer, centerX - 100, centerY - 20, 200, 20, Text.literal("Username"));
+        usernameField.setMaxLength(16);
+        usernameField.setText(SessionUtil.getCurrentUsername());
+        addDrawableChild(usernameField);
 
-        usernameField = new TextFieldWidget(this.textRenderer, centerX - 100, 40, 200, 20, Text.of("Username"));
-        usernameField.setText(username);
-        this.addSelectableChild(usernameField);
+        // Set username button
+        ButtonWidget setButton = ButtonWidget.builder(Text.literal("Set Username"), button -> {
+            String username = usernameField.getText();
+            if (!username.isEmpty()) {
+                SessionUtil.setOfflineUsername(username);
+                status = "Username set to: " + username;
+                close();
+            } else {
+                status = "Please enter a username!";
+            }
+        }).dimensions(centerX - 50, centerY + 20, 100, 20).build();
+        addDrawableChild(setButton);
 
-
-        ButtonWidget.Builder login = ButtonWidget.builder(Text.literal("Login"), button -> {
-            username = usernameField.getText();
-
-            MinecraftClient.getInstance().setScreen(null);
-        });
-        login.dimensions(centerX - 100, 160, 200, 20);
-        login.tooltip(Tooltip.of(Text.literal("ez!")));
-        loginbutton = login
-                .build();
-        this.addDrawableChild(loginbutton);
+        // Back button
+        ButtonWidget backButton = ButtonWidget.builder(Text.literal("Back"), button -> close())
+                .dimensions(centerX - 50, centerY + 50, 100, 20).build();
+        addDrawableChild(backButton);
     }
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+        renderBackground(context, mouseX, mouseY, delta);
         super.render(context, mouseX, mouseY, delta);
-        usernameField.render(context, mouseX, mouseY, delta);
+
+        int centerX = width / 2;
+        int centerY = height / 2;
+
+        context.drawCenteredTextWithShadow(textRenderer, title, centerX, centerY - 60, 0xFFFFFF);
+
+        context.drawTextWithShadow(textRenderer, "Username:", centerX - 100, centerY - 35, 0xFFFFFF);
+
+        if (!status.isEmpty()) {
+            context.drawCenteredTextWithShadow(textRenderer, status, centerX, centerY + 80, 0xFFFFFF);
+        }
     }
 
     @Override
-    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        if (this.usernameField.keyPressed(keyCode, scanCode, modifiers) || this.usernameField.isActive()) {
-            return true;
-        }
-        return super.keyPressed(keyCode, scanCode, modifiers);
+    public boolean shouldPause() {
+        return false;
     }
 }

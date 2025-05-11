@@ -43,10 +43,10 @@ public class SettingsScreen extends Screen {
         drawContext.fill(x + radius, y, x + windowWidth - radius, y + windowHeight, 0xFF222222);
         drawContext.fill(x, y + radius, x + windowWidth, y + windowHeight - radius, 0xFF222222);
 
-        drawCircle(drawContext, x + radius, y + radius, radius, 0xFF222222); // Top-left
-        drawCircle(drawContext, x + windowWidth - radius, y + radius, radius, 0xFF222222); // Top-right
-        drawCircle(drawContext, x + radius, y + windowHeight - radius, radius, 0xFF222222); // Bottom-left
-        drawCircle(drawContext, x + windowWidth - radius, y + windowHeight - radius, radius, 0xFF222222); // Bottom-right
+        drawCircle(drawContext, x + radius, y + radius, radius, 0xFF222222);
+        drawCircle(drawContext, x + windowWidth - radius, y + radius, radius, 0xFF222222);
+        drawCircle(drawContext, x + radius, y + windowHeight - radius, radius, 0xFF222222);
+        drawCircle(drawContext, x + windowWidth - radius, y + windowHeight - radius, radius, 0xFF222222);
 
         drawContext.fill(x + radius, y, x + windowWidth - radius, y + 16, 0xFF222222);
         drawContext.drawCenteredTextWithShadow(textRenderer, module.name, x + (windowWidth / 2), y + 4, 0xFFFFFF);

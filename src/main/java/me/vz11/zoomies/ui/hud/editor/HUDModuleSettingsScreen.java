@@ -10,7 +10,6 @@ import net.minecraft.text.Text;
 
 public class HUDModuleSettingsScreen extends Screen 
 {
-	// adapted for hud modules
     private HUDModule module;
     private SetScreenButton backButton;
 
@@ -29,7 +28,6 @@ public class HUDModuleSettingsScreen extends Screen
 	{
         this.renderBackground(drawContext, mouseX, mouseY, delta);
 
-        // move window if dragging
         if (dragging)
         {
             x = mouseX - startX;

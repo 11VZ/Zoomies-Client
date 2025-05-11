@@ -25,6 +25,6 @@ public class Velocity extends Module
     @Override
     public void tick()
     {
-        if (mc.player.hurtTime > 1) mc.player.setVelocity(0, mc.player.getVelocity().y - 100, 0);
+        if (mc.player.hurtTime > 0) mc.player.setVelocity(0, mc.player.getVelocity().y - 100, 0);
     }
 }

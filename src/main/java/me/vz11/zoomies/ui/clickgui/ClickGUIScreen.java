@@ -32,8 +32,13 @@ public class ClickGUIScreen extends Screen {
 	@Override
 	public void render(DrawContext drawContext, int mouseX, int mouseY, float delta) {
 		this.renderBackground(drawContext, mouseX, mouseY, delta);
+		
 		for (CategoryPane category : categoryPanes) {
 			category.render(drawContext, mouseX, mouseY, delta, textRenderer);
+		}
+		
+		for (CategoryPane category : categoryPanes) {
+			category.renderTooltips(drawContext, mouseX, mouseY, textRenderer);
 		}
 	}
 

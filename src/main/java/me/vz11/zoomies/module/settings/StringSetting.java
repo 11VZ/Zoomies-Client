@@ -50,17 +50,15 @@ public class StringSetting extends Setting
         {
             if (keyCode == 256 || keyCode == 257)
             {
-                // escape or enter was pressed, exit safely
                 focused = false;
                 return;
             }
             if (keyCode == 259)
             {
-                // backspace, remove a character
                 if (value.length() > 0) value = value.substring(0, value.length() - 1);
                 return;
             }
-            if (keyCode > 96) return; // not a typing key
+            if (keyCode > 96) return;
             String append = KeycodeUtils.keyTable[keyCode];
             if (modifiers == 1) append = KeycodeUtils.shiftedKeyTable[keyCode];
             if (append == "Unknown") return;
