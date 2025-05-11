@@ -13,6 +13,12 @@ public class ChatUtils
         mc.inGameHud.getChatHud().addMessage(Text.literal(message));
     }
 
+    public static void sendMessage(String message) 
+    {
+        if (mc.world == null) return;
+        mc.inGameHud.getChatHud().addMessage(Text.literal(message));
+    }
+
     public static void clearChat() {
         for(int i = 0; i < 20; i++) {
             sendMsg("");

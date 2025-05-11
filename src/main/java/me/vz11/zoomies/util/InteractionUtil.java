@@ -218,4 +218,11 @@ public class InteractionUtil {
     public static boolean isPlaying(){
         return mc.currentScreen == null;
     }
+
+    public static void breakCrystal(Entity entity) {
+        if (mc.player == null || mc.interactionManager == null || entity == null) return;
+        
+        mc.interactionManager.attackEntity(mc.player, entity);
+        mc.player.swingHand(Hand.MAIN_HAND);
+    }
 }

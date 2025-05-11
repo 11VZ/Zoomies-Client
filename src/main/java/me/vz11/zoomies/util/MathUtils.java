@@ -38,4 +38,8 @@ public class MathUtils
     public static void logPacket() {
 
     }
+
+    public static float lerp(float start, float end, float factor) {
+        return start + (end - start) * factor;
+    }
 }

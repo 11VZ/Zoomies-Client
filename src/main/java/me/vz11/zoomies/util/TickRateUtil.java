@@ -16,7 +16,7 @@ public class TickRateUtil {
     private long timeGameJoined;
 
     public TickRateUtil() {
-        EventBus.register(this); // Register with event bus
+        EventBus.register(this);
     }
 
     @Event.EventHandler

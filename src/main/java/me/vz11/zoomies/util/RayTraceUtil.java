@@ -2,6 +2,7 @@ package me.vz11.zoomies.util;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
@@ -9,6 +10,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.world.RaycastContext;
 
 public class RayTraceUtil {
     private static final MinecraftClient mc = MinecraftClient.getInstance();
@@ -125,5 +127,14 @@ public class RayTraceUtil {
             return parseBlockName(blockStateString);
         }
         return "No Block";
+    }
+
+    public static boolean isLookingAtCrystal(double distance) {
+        if (mc.player == null || mc.world == null) return false;
+        
+        Entity entity = getLookedAtEntity(distance);
+        if (entity == null) return false;
+        
+        return entity instanceof EndCrystalEntity;
     }
 }
